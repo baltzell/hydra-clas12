@@ -25,7 +25,7 @@ print(provider.get_assignment('/daq/tt/ec',18500,'default').constant_set.data_ta
 Note, there's a [create_assignment](https://github.com/JeffersonLab/ccdb/blob/c30128db4c4e7799b35bf19f04ce6cf81f97f76e/python/ccdb/provider.py#L1219
 ) that presumably works similar to [get_assignment](https://github.com/JeffersonLab/ccdb/blob/c30128db4c4e7799b35bf19f04ce6cf81f97f76e/python/ccdb/provider.py#L1029), otherwise use intermediate text files.
 ### Mon12
-Looks like mon12 requires changes to work on a file without a hundred mouse clicks.  What the hell ...
+Looks like [mon12](https://github.com/jeffersonlab/mon12) requires changes to work on a file without a hundred mouse clicks.  What the hell ...
 ```
 mon12 -batch /path/to/EVIO/file
 ```
