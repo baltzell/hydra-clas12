@@ -15,7 +15,6 @@ ccdb -i
 ccdb -r 18500 dump /daq/tt/ec > ./daq-tt-ec.txt
 ccdb add /daq/tt/ec -v default -r - ./daq-tt-ec.txt
 ```
-Note, mon12 older than 7.8 requires `module load tmpfs` on ifarm.
 ### Python:
 ```python
 import ccdb
