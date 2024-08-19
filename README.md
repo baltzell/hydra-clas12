@@ -9,13 +9,13 @@ module load clas12/dev
 cp /scigroup/cvmfs/hallb/clas12/sw/noarch/data/ccdb/ccdb_latest.sqlite /scratch/$USER/
 export CCDB_CONNECTION=sqlite:////scratch/$USER/ccdb_latest.sqlite
 ```
-### CLI examples:
+### CCDB CLI:
 ```
 ccdb -i
 ccdb -r 18500 dump /daq/tt/ec > ./daq-tt-ec.txt
 ccdb add /daq/tt/ec -v default -r - ./daq-tt-ec.txt
 ```
-### Python:
+### CCDB Python:
 ```python
 import ccdb
 provider = ccdb.AlchemyProvider()
