@@ -1,5 +1,5 @@
 # hydra-clas12
-### Setup the [clas12 environment](https://github.com/jeffersonlab/clas12-env) (dev) on ifarm
+### Setup the [clas12 (dev) environment](https://github.com/jeffersonlab/clas12-env) on ifarm
 ```
 module use /scigroup/cvmfs/hallb/clas12/sw/modulefiles
 module load clas12/dev
