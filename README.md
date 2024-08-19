@@ -1,6 +1,5 @@
 # hydra-clas12
-
-### Setup the [standard clas12 environment](https://github.com/jeffersonlab/clas12-env) on ifarm
+### Setup the [clas12 environment](https://github.com/jeffersonlab/clas12-env) on ifarm
 ```
 module use /scigroup/cvmfs/hallb/clas12/sw/modulefiles
 module load clas12
@@ -16,6 +15,7 @@ ccdb -i
 ccdb -r 18500 dump /daq/tt/ec > ./daq-tt-ec.txt
 ccdb add /daq/tt/ec -v default -r - ./daq-tt-ec.txt
 ```
+Note, mon12 older than 7.8 requires `module load tmpfs` on ifarm.
 ### Python:
 ```python
 import ccdb
@@ -23,6 +23,6 @@ provider = ccdb.AlchemyProvider()
 provider.connect(os.getenv('CCDB_CONNECTION'))
 print(provider.get_assignment('/daq/tt/ec',18500,'default').constant_set.data_table)
 ```
-Not sure it's ever been used, but there's a [create_assignment](https://github.com/JeffersonLab/ccdb/blob/c30128db4c4e7799b35bf19f04ce6cf81f97f76e/python/ccdb/provider.py#L1219
+Note, there's a [create_assignment](https://github.com/JeffersonLab/ccdb/blob/c30128db4c4e7799b35bf19f04ce6cf81f97f76e/python/ccdb/provider.py#L1219
 ) that presumably works similar to [get_assignment](https://github.com/JeffersonLab/ccdb/blob/c30128db4c4e7799b35bf19f04ce6cf81f97f76e/python/ccdb/provider.py#L1029).
-
+### Mon12:
