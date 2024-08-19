@@ -27,3 +27,8 @@ Note, there's a [create_assignment](https://github.com/JeffersonLab/ccdb/blob/c3
 ) that presumably works similar to [get_assignment](https://github.com/JeffersonLab/ccdb/blob/c30128db4c4e7799b35bf19f04ce6cf81f97f76e/python/ccdb/provider.py#L1029).
 ### Mon12:
 Looks like mon12 requires changes to work on a file without a hundred mouse clicks.  What the hell ...
+
+### Input Data:
+```
+/cache/clas12/rg-d/data/clas_018375
+```
