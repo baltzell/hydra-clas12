@@ -4,6 +4,7 @@
 module use /scigroup/cvmfs/hallb/clas12/sw/modulefiles
 module load clas12/dev
 ```
+Note, the "dev" is important to pickup the latest mon12.
 ### Create your own SQLite file and tell CCDB software to use it
 ``` 
 cp /scigroup/cvmfs/hallb/clas12/sw/noarch/data/ccdb/ccdb_latest.sqlite /scratch/$USER/
