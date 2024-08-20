@@ -26,8 +26,8 @@ Note, there's a [create_assignment](https://github.com/JeffersonLab/ccdb/blob/c3
 ) that presumably works similar to [get_assignment](https://github.com/JeffersonLab/ccdb/blob/c30128db4c4e7799b35bf19f04ce6cf81f97f76e/python/ccdb/provider.py#L1029), otherwise use intermediate text files.
 ### Mon12
 ```
-mkdir ./tmp
-mon12 -tabs ECAL -trigger 0x1 -autosave 10000 -outDir ./tmp ~/data/clas_017593.evio.00015
+mkdir ./mon12.tmp
+mon12 -tabs ECAL -trigger 0x1 -autosave 10000 -outDir ./mon12.tmp /path/to/evio/file
 ```
 Note, the best setting for trigger depends on the run group, but for ECAL/FTOF 0x1 is always fine.
 ### Input Data
