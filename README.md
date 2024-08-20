@@ -25,11 +25,13 @@ print(provider.get_assignment('/daq/tt/ec',18500,'default').constant_set.data_ta
 Note, there's a [create_assignment](https://github.com/JeffersonLab/ccdb/blob/c30128db4c4e7799b35bf19f04ce6cf81f97f76e/python/ccdb/provider.py#L1219
 ) that presumably works similar to [get_assignment](https://github.com/JeffersonLab/ccdb/blob/c30128db4c4e7799b35bf19f04ce6cf81f97f76e/python/ccdb/provider.py#L1029), otherwise use intermediate text files.
 ### Mon12
-Looks like [mon12](https://github.com/jeffersonlab/mon12) requires changes to work on a file without a hundred mouse clicks.  What the hell ...
 ```
-mon12 -batch /path/to/EVIO/file
+mkdir ./tmp
+mon12 -tabs ECAL -trigger 0x1 -autosave 10000 -outDir ./tmp ~/data/clas_017593.evio.00015
 ```
+Note, the best setting for trigger depends on the run group, but for ECAL/FTOF 0x1 is always fine.
 ### Input Data
 ```
+/cache/clas12/rg-k/data/clas_019335
 /cache/clas12/rg-d/data/clas_018375
 ```
