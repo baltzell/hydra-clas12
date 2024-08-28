@@ -9,6 +9,7 @@ Note, the "dev" is important to pickup the latest mon12.
 ``` 
 cp /scigroup/cvmfs/hallb/clas12/sw/noarch/data/ccdb/ccdb_latest.sqlite /scratch/$USER/
 export CCDB_CONNECTION=sqlite:////scratch/$USER/ccdb_latest.sqlite
+echo $USER | python3 $CCDB_HOME/scripts/users_create/users_create.py $CCDB_CONNECTION
 ```
 ### CCDB CLI examples
 ```
@@ -21,10 +22,12 @@ ccdb add /daq/tt/ec -v default -r - ./daq-tt-ec.txt
 import ccdb
 provider = ccdb.AlchemyProvider()
 provider.connect(os.getenv('CCDB_CONNECTION'))
+provider._auth.current_user_name = os.getenv('CCDB_USER')
 print(provider.get_assignment('/daq/tt/ec',18500,'default').constant_set.data_table)
 ```
 Note, there's a [create_assignment](https://github.com/JeffersonLab/ccdb/blob/c30128db4c4e7799b35bf19f04ce6cf81f97f76e/python/ccdb/provider.py#L1219
 ) that presumably works similar to [get_assignment](https://github.com/JeffersonLab/ccdb/blob/c30128db4c4e7799b35bf19f04ce6cf81f97f76e/python/ccdb/provider.py#L1029), otherwise use intermediate text files.
+
 ### Mon12
 ```
 mkdir ./mon12.tmp
